@@ -2,9 +2,9 @@ require "./lib"
 
 module Pa
   class HostApi
-    delegate :device_count, :default_input_device, :default_output_device, :type, @info
+    delegate :device_count, :default_input_device, :default_output_device, :type, to: @info
 
-    def initialize(@info)
+    def initialize(@info : LibPortAudio::HostApiInfo)
     end
 
     def name

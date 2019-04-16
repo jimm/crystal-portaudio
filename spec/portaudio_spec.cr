@@ -1,6 +1,6 @@
 require "./spec_helper"
 
-describe Portaudio do
+describe Pa do
   # TODO: Write tests
 
   it "works" do

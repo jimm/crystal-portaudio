@@ -3,13 +3,13 @@ require "./host_api"
 
 module Pa
   class Device
-    delegate :max_input_channels, :max_output_channels, @info
-    delegate :default_low_input_latency, :default_low_output_latency, @info
-    delegate :default_high_input_latency, :default_high_output_latency, @info
-    delegate :default_sample_rate, @info
+    delegate :max_input_channels, :max_output_channels, to: @info
+    delegate :default_low_input_latency, :default_low_output_latency, to: @info
+    delegate :default_high_input_latency, :default_high_output_latency, to: @info
+    delegate :default_sample_rate, to: @info
     getter id
 
-    def initialize(@id, @info)
+    def initialize(@id : Pa::DeviceIndex, @info : LibPortAudio::DeviceInfo)
     end
 
     def name
